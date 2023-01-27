@@ -1,0 +1,72 @@
+﻿/* Simple rotation for start animation (1s, 360°)*/
+@keyframes rotate {
+  from { transform: rotateX(-20deg) rotateY(-30deg) rotateZ(0deg); }
+  to { transform: rotateX(-20deg) rotateY(333deg) rotateZ(0deg); }
+}
+/* Loop rotation for endless demo*/
+@keyframes rotate2 {
+  from { transform: rotateX(-30deg) rotateY(0deg); }
+  to { transform: rotateX(330deg) rotateY(1800deg); }
+}
+
+.cube {
+	animation: rotate 1s linear forwards;
+}
+
+.combinations
+{
+  position: absolute;
+  top: calc(var(--unit) / 5);
+  right: calc(var(--unit) / 5);
+  width: calc(var(--unit) * 10);
+  height: calc(var(--unit) * 2);
+  border-style: solid;
+  border-width: 1px;
+  border-color: #000;
+  border-radius: calc(var(--unit) / 2);
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-weight: 900;
+  text-align: center;
+  line-height: calc(var(--unit) * 2);
+  font-size: calc(var(--unit) * 1.8);
+}
+
+.click-button
+{
+  position: absolute;
+  bottom: calc(var(--unit) * 1);
+  right: calc(var(--unit) * 1);
+  min-width: calc(var(--unit) * 10);
+  padding: calc(var(--unit) * 1) calc(var(--unit) * 2);
+  height: calc(var(--unit) * 3);
+  background: linear-gradient(to bottom, #0f8, #8fb, #0b8);
+  cursor: pointer;
+  border-radius: calc(var(--unit) / 2);
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-weight: 900;
+  text-align: center;
+  line-height: calc(var(--unit) * 3);
+  font-size: calc(var(--unit) * 2.6);
+  display: none;
+}
+
+.click-button:hover 
+{
+  box-shadow: 0px 0px 10px 2px #ff8;
+  background: linear-gradient(to bottom, #cc5, #ffe, #bba);
+}
+
+.cubeerror
+{
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  height: calc(var(--unit) * 2);
+  background: linear-gradient(to bottom, #f88, #fdd, #d44);
+  border-radius: calc(var(--unit) / 4);
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  text-align: center;
+  line-height: calc(var(--unit) * 2);
+  font-size: calc(var(--unit) * 1.6);
+}

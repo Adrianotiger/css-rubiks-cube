@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>CSS Rubik's Cube</title>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="cube.css">
+		<link rel="stylesheet" type="text/css" href="cubetools.css">
+        <script src="cube.js"></script>
+        <style>
+            body 
+            {
+                margin:0 auto;
+                text-align: center;
+            }
+            .example-box
+            {
+                width: 30vmax;
+                height: 30vmax;
+                margin: 1vmax;
+                position: relative;
+                display: inline-block;
+                border-radius: 0.2vmin;
+                box-shadow:0px 0px 1vmin 0.1vmin #000;
+                text-align: center;
+            }
+        </style>
+	</head>
+	<body>
+        <div class="example-box" id="cubediv-0">
+            Auto moves
+        </div>
+
+        <div class="example-box" id="cubediv-1">
+            Demo
+        </div>
+
+        <div class="example-box" id="cubediv-2">
+            Solve F2L (1)
+        </div>
+
+		
+        <script>
+            var c0 = new Cube(document.getElementById("cubediv-0"));
+            var c1 = new Cube(document.getElementById("cubediv-1"));
+            var c2 = new Cube(document.getElementById("cubediv-2"));
+
+			setInterval(()=>{
+				var move = "UDRLFB"[ Math.floor( Math.random() * 6 ) ];
+				if(Math.random() < 0.2) move += "2";
+				if(Math.random() < 0.5) move += "'";
+				c0.setMoves(move);
+			}, 2000);
+
+            document.getElementById("cubediv-1").querySelector(".cube").style.animation = "rotate2 60s linear infinite";
+
+			c2.removeStickers(["ur-a", "ul-a", "rb-a", "rf-a", "lb-a", "lf-a"]);
+			c2.removeStickers(["uf-a", "ufr-a", "ufl-a"]);
+			c2.removeStickers(["ub-a", "ubr-a", "ubl-a"]);
+			c2.removeStickers(["dbr-a", "dbl-a", "dfl-a"]);
+            const animation = 
+            [
+                {   scramble: "F' U' F U",                          },
+                {   event: { type: "click", title: "PLAY" }			},
+				{   blink: { faces: ["f-f", "frd-f"], qty: 6 }      },
+                {   blink: { faces: ["frd-d"], qty: 6}              },
+                {   solve: "R U R'"                                 },
+                {   event: { type: "sleep", sleep: 2500 }           }
+            ];
+			c2.setAnimation(animation);
+            
+        </script>
+	</body>
+</html>
