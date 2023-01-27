@@ -7,9 +7,10 @@ The entire animation is made with CSS3. No math libs, no Javascript libs, just C
 
 This javascript-class will allow you to insert a cube inside your webpage and animate it with some simple moves (no solve functionality).
 
-**[View Demo](https://adrianotiger.github.io/css-rubiks-cube/)**
+**[View Demo](https://adrianotiger.github.io/css-rubiks-cube/)**  
 
-**[Some examples](https://adrianotiger.github.io/css-rubiks-cube/examples.html)**
+**[Some examples](https://adrianotiger.github.io/css-rubiks-cube/examples.html)**  
+![Demo cubes](screenshot.jpg)
 
 ## How use this script
 ### Install
